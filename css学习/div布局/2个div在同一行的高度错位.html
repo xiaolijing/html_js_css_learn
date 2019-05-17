@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .row{
+            display: inline-block;
+            border:1px solid #F00;
+            width:450px;
+            height:400px;
+            margin:0 auto;
+            /* 这些都能解决错位问题 */
+            /*vertical-align:middle*/
+            /*float: left;*/
+            /*overflow:scroll;*/
+        }
+        .formselect{
+            border: 1px solid #ccc;
+            color: #000;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1em;
+            height: 30px;
+            transition: background 0.3s ease-in-out;
+            width: 150px;
+
+        }
+    </style>
+</head>
+<body>
+<p>
+    display：inline-block，是基于baseline对齐的，大小不一会导致上下不齐，所以设置的时候最好设置vertical-align属性。比如设置vertical-align:middle 或者直接.row上加上overflow:hidden也能解决问题
+</p>
+<div class="row" style="height: 500px">
+    <form action="">
+        区域
+        <select class="formselect">
+            <option>朝阳区</option>
+            <option>海淀区</option>
+        </select>
+        <select class="formselect">
+            <option>朝阳区</option>
+            <option>海淀区</option>
+        </select>
+    </form>
+
+</div>
+<div class="row">
+</div>
+
+
+</body>
+</html>

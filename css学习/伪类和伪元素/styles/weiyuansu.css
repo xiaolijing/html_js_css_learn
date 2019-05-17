@@ -1,0 +1,56 @@
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: yellowgreen;
+
+}
+.box::before{
+    content: ".";
+    background-color: red;
+    height: 10px;
+    width: 10px;
+}
+
+.example p::selection{
+    color:red;
+    background-color: #ffff00;
+}
+
+#weiyuansu p::before{
+    content:"Read this -";
+    background-color:yellow;
+    color:red;
+    font-weight:bold;
+}
+
+#weiyuansu  p::after
+{
+    content:"- Remember this";
+    background-color:yellow;
+    color:red;
+    font-weight:bold;
+
+}
+
+ul.beforeU li{
+    /*list-style-type: none;*/
+    line-height: 16px;
+
+}
+ul.beforeU li::before{
+    content: url(../../../img/folder.png);
+    <!-- 让ul中的libefore的图片能够垂直居中 -->
+    vertical-align:middle;
+    display:inline-block;
+    /*
+      添加箭头等效果
+       content: '';
+       background: url('../../../img/folder.png') no-repeat top left /32px 16px;
+       position: absolute;
+       top: -15px;
+       z-index: 2;
+       width: 16px;
+       height: 16px;
+       display:inline-block;*/
+
+}

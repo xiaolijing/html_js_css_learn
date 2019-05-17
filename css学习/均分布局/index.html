@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .side {
+        position: fixed;
+        border: 1px solid #000000;
+        right: 0;
+        top: 40px;
+        bottom: 0;
+        width: 300px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: box;
+        -webkit-box-orient: vertical; /*属性值：[horizontal]横向/[vertical]纵向*/
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+    }
+
+    .aside {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        box-flex: 1;
+        vertical-align:middle;
+        overflow: hidden;
+
+    }
+
+</style>
+<body>
+<div class="side" >
+    <div class="aside" style="background-color: red;">
+        <div style="position: absolute;height: 100px;border: 1px solid #000000;width:100%">1231</div>
+    </div>
+    <div class="aside" style="background-color: #ffff00;">
+        <div style="position: absolute;height: 100px;border: 1px solid #000000;width:100%">1231</div>
+    </div>
+    <div class="aside" style="background-color: #0000ff;">
+        <div style="position: absolute;height: 100px;border: 1px solid #000000;width:100%">1231</div>
+    </div>
+</div>
+
+</body>
+</html>

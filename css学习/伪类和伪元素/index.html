@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>css样式中的伪类和伪元素</title>
+    <link rel="stylesheet" type="text/css" href="styles/importAll.css">
+    <script type="text/javascript" src="../../jquery-1.9.0.js"></script>
+</head>
+<body>
+<a class="test" href="#">aaaaaaaaaaaaaaaa</a>
+<!--<h1>前言</h1>
+<hr>-->
+<p>作为前端，什么是伪类，什么是伪元素？</p>
+
+<h1>概念上的区别</h1>
+<hr>
+<strong>伪类，更多的定义元素所处的状态。</strong>常见伪类有：<i>:hover，:active，:focus，:visited，:link，:not，:first-child，:last-child</i><br>
+<strong>伪元素，指不存在于dom树中的虚拟元素，可以像正常的html元素一样定义css，却无法用js获取对象。</strong>常见的伪元素有：
+<i>::before，::after，::first-letter，::first-line</i><br>
+
+<p>Css3明确规定了，伪类用<span class="important">一个冒号（:）</span>来表示，而伪元素则用<span class="important">两个冒号(::)</span>来表示。
+
+<p>这其中有兼容性问题，<span class="important">它们的写法可以是一致的，都用一个冒号表示。</span>所以非常容易混淆</p>
+
+<!--<span><h1>实战场景——伪类</h1><a>隐藏</a></span>-->
+<h1 id="weilei">实战场景——伪类</h1>
+
+<div id="weileiExample" class="block1">
+
+    <h2>表单校验</h2>
+
+    <div class="block2">
+        <p>表单的校验中，常会用到 <code>:required</code>、<code>:valid</code> 和 <code>:invalid</code> 这三个伪类。先来看看它们所代表的含义。</p>
+        <ul>
+            <li><code>:required</code>，指定具有 required属性 的表单元素</li>
+            <li><code>:valid</code>，指定一个 匹配指定要求 的表单元素</li>
+            <li><code>:invalid</code>，指定一个 不匹配指定要求 的表单元素</li>
+            <li><code>:checked</code>，有checked属性的控件</li>
+        </ul>
+        <p>如下例子：</p>
+
+        <div class="example">
+            <p>input中类型为email的校验</p>
+
+            <p>符合email校验规则</p>
+            <input type="email" required placeholder="请输入" value="24238477@qq.com"/>
+
+            <p>不符合email校验规则</p>
+            <input type="email" required placeholder="请输入" value="lalala"/>
+
+            <p>有required标识，但未填写</p>
+            <input type="email" required placeholder="请输入" value=""/>
+        </div>
+    </div>
+
+    <h2>折叠面板</h2>
+
+    <div class="block2">
+        <p><code>:target</code>属性,可设置当前活动的target元素的样式，是文档的内部连接，即URL后面更有锚名称#，指向文档内某个具体的元素</p>
+
+        <p><b>注意：</b><span>IE 8 以及更早版本的浏览器不支持 :target 选择器.</span></p>
+
+        <div class="example">
+            <div class="t-collapse" id="modal">
+                <!-- 在url最后添加 #modal1，使得target生效 -->
+                <a class="collapse-target" href="#modal1">target 1</a>
+
+                <div class="collapse-body" id="modal1">
+                    <!-- 将url的#modal1 变成# ，使得target失效 -->
+                    <a class="collapse-close" href="#modal">target 1</a>
+
+                    <p>......</p>
+
+                    <p>......</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h2>元素的index</h2>
+
+    <div class="block2">
+        <p>执行一些列标签中的某个元素，可以用<code>:nth-child(n)</code>与<code>:nth-of-type(n)</code>来找到并指定样式。</p>
+        <ul>
+            <li><span><code>:first-of-type</code> 选择每个p元素是其父级的第一个p元素	</span></li>
+            <li><span><code>:last-of-type</code> 选择每个p元素是其父级的最后一个p元素	</span></li>
+            <li><span><code>:only-of-type</code> 选择每个p元素是其父级的唯一p元素	</span></li>
+            <li><span><code>:only-child </code> 选择每个p元素是其父级的唯一子元素	</span></li>
+            <li><span><code>:nth-child(n)</code> 选择每个p元素是其父级的第二个子元素	</span></li>
+            <li><span><code>:nth-last-child(n</code> 选择每个p元素的是其父级的第二个子元素，从最后一个子项计数	</span></li>
+            <li><span><code>:nth-of-type(n)</code> 选择每个p元素是其父级的第二个p元素	</span></li>
+            <li><span><code>:nth-last-of-type(n)</code> 选择每个p元素的是其父级的第二个p元素，从最后一个子项计数	</span></li>
+            <li><span><code>:last-child</code> 选择每个p元素是其父级的最后一个子级。			</span></li>
+        </ul>
+        <p><b>注意：</b>n可以是大于零的数字，或者类似2n+1的表达式，或者even（奇）/odd（偶）</p>
+
+        <p><b>区别：</b></p>
+        <ul>
+            <li><b>:XXX-type(n)</b> 除了关注n之外，还需要关注最前面的类型，也就是标签。即同一个父容器中，按照定义的标签元素来计数</li>
+            <li><b>:XXX-child(n)</b> 它关注的是：其父元素下的第n个孩子，与类型无关。</li>
+        </ul>
+        <pre class="code">
+            <code>
+                .ant-btn {
+                &amp;::before {
+                display: <span class="hljs-keyword">none</span> <span class="hljs-comment">!important;</span>
+                }
+                }
+            </code>
+        </pre>
+        <div class="example">
+            <div class="nth_example">
+                <h1>这是标题</h1>
+
+                <p>第一个段落。</p>
+
+                <p>第二个段落。</p>
+
+                <p>第三个段落。</p>
+
+                <p>第四个段落。</p>
+
+                <p>第五个段落。</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<hr>
+<h1>实战场景——伪元素</h1>
+
+<p>伪元素，常用的伪元素有</p>
+<ul>
+    <li><code>:first-letter</code>&nbsp;&nbsp;第一个字（母）</li>
+    <li><code>:first-line</code>&nbsp;&nbsp;第一行</li>
+    <li><code>:before</code>&nbsp;&nbsp;元素前</li>
+    <li><code>:after</code>&nbsp;&nbsp;元素后</li>
+    <li><code>::selection</code>&nbsp;&nbsp;选中部分</li>
+</ul>
+
+<div id="weiyuansu" class="block1">
+    <h2>美化选中文本，::selection</h2>
+
+    <div class="block2">
+        <div class="example">
+            <p>用伪元素设置选中部分的值</p>
+
+            <p>Custom text selection color</p>
+        </div>
+    </div>
+    <h2>统一添加某样式</h2>
+    <p>::before和::after定义的css中，使用content 属性来指定要插入的内容</p>
+    <div class="block2">
+        <h3>例子1</h3>
+        <div class="example">
+            <p>My name is Donald</p>
+            <p>I live in Ducksburg</p>
+            <p><b>注意:</b>  :before 作用于 IE8, &lt;!DOCTYPE&gt;  必须已经声明.</p>
+        </div>
+        <h3>例子2</h3>
+        <div class="example">
+            <ul class="beforeU">
+                <li>文件夹文件夹文件夹文件夹文件夹文件夹文件夹</li>
+                <li>Number three is a bit longer, with some lorem ipsum for good measure. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+                <li>文件夹</li>
+                <li>文件夹</li>
+            </ul>
+        </div>
+    </div>
+    总结
+    <table>
+        <thead>
+        <tr>
+            <th>选择器</th>
+            <th>命令</th>
+            <th>补充</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>:first-line</td>
+            <td>伪元素用于向文本的首行设置特殊样式</td>
+            <td>注意："first-line" 伪元素只能用于块级元素。</td>
+        </tr>
+        <tr>
+            <td>:first-letter</td>
+            <td>用于向文本的首字母设置特殊样式</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>:before</td>
+            <td>伪元素可以在元素的内容前面插入新内容</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>:after</td>
+            <td>伪元素可以在元素的内容之后插入新内容</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="fixtools">
+    <a id="backtop" class="hidden" onclick="function aa(){}" href="#">回顶部</a>
+</div>
+<div class="foot"></div>
+<script type="text/javascript" src="extends.js"></script>
+</body>
+</html>

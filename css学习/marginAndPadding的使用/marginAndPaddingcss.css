@@ -1,0 +1,19 @@
+li>div{
+    border-width:0;
+}
+div{
+    border:1px solid cadetblue;
+    height: 100px;
+}
+
+.innerdiv{
+    position: relative;
+    height:80px;
+    margin: 10px 5px;
+    background-color: yellowgreen;
+    padding: 20px;
+}
+.innerdiv>div{
+    height: 100%;/*充满父容器*/
+    background-color: chocolate;
+}

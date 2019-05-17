@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>样式单选择器</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="easyui-tabs navigator">
+    <div class="tabs-header"></div>
+    <div class="tabs-panel">
+        <div class="easyui-tabs">
+            <div class="tabs-header"></div>
+            <div class="tabs-panel"></div>
+        </div>
+
+    </div>
+
+</div>
+<button id="btn1">Button</button>
+</body>
+<script>
+    function show(msg){
+        alert(msg);
+    }
+    var btn = document.getElementById("btn1");
+    btn.setAttribute("onclick","show('hello')");
+    btn.setAttribute("class", "value");
+
+    var body = document.getElementsByTagName("body");
+    body[0].appendChild(document.createElement("input"));
+</script>
+</html>

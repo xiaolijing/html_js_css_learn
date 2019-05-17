@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>css值margin的使用</title>
+    <link href="marginAndPaddingcss.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <ul>
+        <li>内联对象:
+            <span>inline对象，简单说就是接着别的元素往后排。 比如span em 就是内联元素</span>
+        </li>
+        <li>
+            块对象：
+            <div>
+                与之相对的是block对象，也叫块级元素。不会接着别的往后排，另起一行，且独占一行。比如 p div h1  section就是块级。
+            </div>
+        </li>
+    </ul>
+
+    <!--innerdiv设置了height和padding，貌似它整个高变成了padding+height的高度，
+    就是说它内部的有效高度是设置的height，而页面呈现的高度则是 padding-top + height + padding-bottom -->
+    <!--
+    内联对象要使用该属性，必须先设定对象的height或width属性，或者设定position属性为absolute。
+    -->
+    <div class="innerdiv">
+        <div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    setTimeout("alert('1234')",5000)
+</script>
+</body>
+</html>

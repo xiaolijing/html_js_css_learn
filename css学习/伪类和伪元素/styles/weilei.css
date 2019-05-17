@@ -1,0 +1,42 @@
+#weilei{
+    cursor: pointer;
+}
+input:required {
+    border-color: red;
+    box-shadow: inset 5px 0 0 red;
+}
+
+input:invalid {
+    border-color: red;
+    box-shadow: inset 5px 0 0 red;
+}
+
+input:valid {
+    border-color: green;
+    box-shadow: inset 5px 0 0 green;
+}
+/* 折叠面板 */
+.t-collapse{
+    /*height: 20px;*/
+    border: 1px solid #808080;
+}
+.t-collapse > .collapse-body {
+    background-color: #f8f8ff;
+    display: none;
+}
+.t-collapse > .collapse-body:target {
+    display: block;
+}
+
+/*nth-child*/
+.nth_example p:nth-of-type(2)
+{
+    background:red;
+    color: #f5f5f5;
+}
+
+.nth_example p:nth-child(2)
+{
+    background:blue;
+    color: #f5f5f5;
+}

@@ -1,0 +1,36 @@
+.echeckbox_minimal-purple, .eradio_minimal-purple {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    border: none;
+    cursor: pointer;
+    background: url("purple.png") no-repeat scroll 0 0;
+}
+
+.eradio_minimal-purple{
+    background-position: -100px 0;
+}
+.eradio_minimal-purple:hover{
+    background-position: -120px 0;
+}
+.eradio_minimal-purple.checked{
+    background-position: -140px 0;
+}
+.echeckbox_minimal-purple{
+    background-position: 0 0;
+}
+.echeckbox_minimal-purple:hover{
+    background-position: -20px 0;
+}
+.echeckbox_minimal-purple.checked{
+    background-position: -40px 0;
+}
+.elabel{
+    margin-bottom: 0;
+    padding-left: 3px;
+    vertical-align: middle;
+    cursor: pointer;
+}

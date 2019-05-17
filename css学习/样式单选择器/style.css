@@ -1,0 +1,23 @@
+.easyui-tabs{
+    background-color: #fff0fe;
+    border:3px solid gold;
+}
+.tabs-header{
+    height: 15px;
+    width:20px;
+    background-color: #5ac8ff;
+}
+
+.tabs-panel{
+    height: 150px;
+    width: 200px;
+    background-color: #ff747c;
+}
+
+.easyui-tabs.navigator{
+    background-color: #4cff30;
+}
+.easyui-tabs.navigator>.tabs-header{
+    background-color: #ff7e39;
+    height: 25px;
+}

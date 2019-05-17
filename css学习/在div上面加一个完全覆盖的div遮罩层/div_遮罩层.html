@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .parent {
+            position: relative;
+            float: left;
+        }
+
+        .child {
+
+        }
+
+        .childz {
+            height: 16px;
+            width: 16px;
+            border: 1px solid red;
+            position:absolute;
+            z-index:100;
+            bottom: 0;
+            background:#cccccc;
+            filter: alpha(Opacity=50);
+            -moz-opacity:0.5;
+            opacity: 0.5;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="themes-plugin/groupStyle.css">
+</head>
+<body>
+<!--<div class="parent">
+    <div class="child"></div>
+    <div class="childz"></div>
+</div>-->
+
+<div>
+    <span ng-repeat="item in row track by $index" style="width:auto; display:inline-block;" class="ng-scope">
+        <span
+            style="width: auto; display: inline-block; margin-right: 10px;">
+            <div class="parent">
+                <div class="echeckbox_minimal-purple"></div>
+                <div class="childz"></div>
+            </div>
+            <input
+            name="MATERIALCODE" type="checkbox" ng-disabled="true" value="01" label="招标文件" onclick="return false;"
+            disabled="disabled" style="display: none;">
+            <label
+            style="margin-bottom: 0px; padding-left: 3px; vertical-align: middle; cursor: pointer;">招标文件</label>
+        </span>
+    </span>
+</div>
+</body>
+</html>

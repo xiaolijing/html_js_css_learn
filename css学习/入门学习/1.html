@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>border-radius</title>
+    <link rel="stylesheet" href="buju.css">
+    <style type="text/css">
+        /*圆角*/
+        div.circle {
+            height: 100px; /*与width设置一致*/
+            width: 100px;
+            background: #9da;
+            border-radius: 50px; /*四个圆角值都设置为宽度或高度值的一半*/
+        }
+
+        div.semi-circle {
+            height: 100px;
+            width: 50px;
+            background: #9da;
+            border-radius: 50px 0 0 50px;
+        }
+
+        /*阴影*/
+        .boxshadow-outset {
+            width: 100px;
+            height: 100px;
+            box-shadow: 4px 4px 6px #666;
+        }
+
+        .boxshadow-inset {
+            width: 100px;
+            height: 100px;
+            box-shadow: 4px 4px 6px #666 inset;
+        }
+
+        .boxshadow-multi {
+            width: 100px;
+            height: 100px;
+            box-shadow: 4px 2px 6px #f00, -4px -2px 6px #000, 0px 0px 12px 5px #33CC00 inset;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        <h1>Css学习笔记</h1>
+
+        <h2 id="lijing">border-radius实现圆角边</h2>
+        <div >
+            <div class="example">
+                <div class="fst"></div>
+                <div class="scd"></div>
+            </div>
+            
+        <table>
+            <thead>
+            <th>实现类型</th>
+            <th>实现效果</th>
+            <th>实现说明</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>全面圆</td>
+                <td>
+                    <div class="circle">
+                    </div>
+                </td>
+                <td>
+                    高度和宽度一致，border-radius的值大于高宽一半
+                </td>
+            </tr>
+            <tr>
+                <td>半圆</td>
+                <td>
+                    <div class="semi-circle">
+                    </div>
+                </td>
+                <td>
+                    高度是宽度一半<br>
+                    <code>
+                        border-radius: 50px 0 0 50px;<br>
+                        按照左上，右上，右下，左下的顺时针方向设置
+                    </code>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+        <h2 id="lijing1">阴影框</h2>
+        <div class="weui-uploader__input-box" onclick="hell()">
+        </div>
+        <table class="tabledscpt">
+            <colgroup>
+                <col width=" 100px">
+                <col width=" 150px">
+                <col width=" 350px">
+            </colgroup>
+            <thead>
+            <th>实现类型</th>
+            <th>实现效果</th>
+            <th>实现说明</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>外阴影</td>
+                <td>
+                    <div class="boxshadow-outset">
+                    </div>
+                </td>
+                <td>
+                    阴影参数：
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>
+                                值
+                            </th>
+                            <th>
+                                描述
+                            </th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>X轴偏移量</td>
+                            <td><span style="color: red">必须；</span>水平阴影位置，允许负值</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><span style="color: red">必须；</span>抽纸阴影位置，允许负值</td>
+                        </tr>
+                        <tr>
+                            <td>阴影模糊半径</td>
+                            <td>可选，模糊距离，值越大，阴影模糊边界越大</td>
+                        </tr>
+                        <tr>
+                            <td>阴影扩展半径</td>
+                            <td>可选，阴影尺寸，值可以为负数，阴影的效果是模糊半径+扩展半径，扩展半径不会模糊显示</td>
+                        </tr>
+                        <tr>
+                            <td>阴影颜色</td>
+                            <td>可选，阴影颜色，默认为黑色</td>
+                        </tr>
+                        <tr>
+                            <td>投影方式</td>
+                            <td>可选（设置inset时为<span style="color: red">内部阴影</span>方式，如果忽略为<span
+                                    style="color:red">外阴影</span>方式）
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>内阴影</td>
+                <td>
+                    <div class="boxshadow-inset">
+                    </div>
+                </td>
+                <td>
+                    box-shadow: 4px 4px 6px #666 inset;
+                </td>
+            </tr>
+            <tr>
+                <td>多阴影</td>
+                <td>
+                    <div class="boxshadow-multi">
+                    </div>
+                </td>
+                <td>
+                    多阴影属性，以“,”进行多定义<br>
+                    <span style="font-size: 12px">box-shadow: 4px 2px 6px #f00, -4px -2px 6px #000, 0px 0px 12px 5px #33CC00 inset;</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <h2 id="lijing2">bordr-image：使用图片做为边框</h2>
+        <div>
+            <strong>使用图片设计边框：</strong><br><img src="image/borderImage.jpg">
+        </div>
+        <table>
+
+        </table>
+
+    </div>
+    <!--导航-->
+
+    <div class="slide">
+        <div>
+            <div class="header"></div>
+            <div class="content">
+                <ul>
+                    <li><a href="#lijing">border-radius实现圆角边</a></li>
+                    <li><a href="#lijing1">阴影框</a></li>
+                    <li><a href="#lijing2">bordr-image：使用图片做为边框</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <table class="tabledscpt" style="display: none">
+        <colgroup>
+            <col width=" 100px">
+            <col width=" 150px">
+            <col width=" 350px">
+        </colgroup>
+        <thead>
+        <th>实现类型</th>
+        <th>实现效果</th>
+        <th>实现说明</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+<script>
+    function hell(){
+        if(event.target.classList.length==1){
+//            event.target.setAttribute("class","weui-uploader__input-box hide");
+            event.target.classList.add("hide");
+        }else{
+            event.target.classList.remove("hide");
+        }
+    }
+</script>
+
+</body>
+</html>
