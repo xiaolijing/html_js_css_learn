@@ -11,6 +11,10 @@ body{
 .main{
     float: left;
 }
+
+.block{
+    position: relative;
+}
 .slide{
     right: 25px;
     top:238px;
@@ -53,14 +57,16 @@ th,td {
     padding: 5px;
 }
 
-
+h2.block-title{
+    margin-left: 35px;
+}
 
 .example{
-    position: relative;
+    position: absolute;
     border: 1px solid #d9d9d9;
     height: 24px;
     width: 24px;
-    margin:10px 0;
+    /*margin:10px 0;*/
 }
 .example div.fst{
     height: 10px;
