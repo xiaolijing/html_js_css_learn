@@ -4,55 +4,21 @@
     <meta charset="utf-8">
     <title>border-radius</title>
     <link rel="stylesheet" href="buju.css">
-    <style type="text/css">
-        /*圆角*/
-        div.circle {
-            height: 100px; /*与width设置一致*/
-            width: 100px;
-            background: #9da;
-            border-radius: 50px; /*四个圆角值都设置为宽度或高度值的一半*/
-        }
-
-        div.semi-circle {
-            height: 100px;
-            width: 50px;
-            background: #9da;
-            border-radius: 50px 0 0 50px;
-        }
-
-        /*阴影*/
-        .boxshadow-outset {
-            width: 100px;
-            height: 100px;
-            box-shadow: 4px 4px 6px #666;
-        }
-
-        .boxshadow-inset {
-            width: 100px;
-            height: 100px;
-            box-shadow: 4px 4px 6px #666 inset;
-        }
-
-        .boxshadow-multi {
-            width: 100px;
-            height: 100px;
-            box-shadow: 4px 2px 6px #f00, -4px -2px 6px #000, 0px 0px 12px 5px #33CC00 inset;
-        }
-
-    </style>
+    <link rel="stylesheet" href="xiaoguo.css">
 </head>
 <body>
 <div class="container">
     <div class="main">
         <h1>Css学习笔记</h1>
+       <div class="block">
+           <div class="example" onclick="hell()">
+               <div class="fst"></div>
+               <div class="scd"></div>
+           </div>
 
-        <h2 id="lijing">border-radius实现圆角边</h2>
-        <div >
-            <div class="example">
-                <div class="fst"></div>
-                <div class="scd"></div>
-            </div>
-            
+           <h2 id="lijing" class="block-title">border-radius实现圆角边</h2>
+
+
         <table>
             <thead>
             <th>实现类型</th>
@@ -86,7 +52,10 @@
             </tr>
             </tbody>
         </table>
-        </div>
+
+       </div>
+
+       <div>
         <h2 id="lijing1">阴影框</h2>
         <div class="weui-uploader__input-box" onclick="hell()">
         </div>
@@ -173,15 +142,76 @@
             </tr>
             </tbody>
         </table>
+       </div>
+
+        <div>
         <h2 id="lijing2">bordr-image：使用图片做为边框</h2>
         <div>
-            <strong>使用图片设计边框：</strong><br><img src="image/borderImage.jpg">
+            <strong>使用图片设计边框：</strong><br><img height="100px" src="image/borderImage.jpg">
+            <p><i>从结果来看，border不影响宽和高，在已有定义的宽高基础上，再加上border</i></p>
         </div>
-        <table>
-
+        <table class="tabledscpt">
+            <colgroup>
+                <col width=" 100px">
+                <col width=" 150px">
+                <col width=" 350px">
+            </colgroup>
+            <thead>
+            <th>实现类型</th>
+            <th>实现效果</th>
+            <th>实现说明</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    div 高度未设置，border设置为70
+                </td>
+                <td>
+                    <div class="borderImage1"></div>
+                </td>
+                <td rowspan="3" style="text-align: left">
+                    border-image参数：<br>
+                    url:图片路径
+                    ABCD：border的边框设置的顺序是左上右下，如果是border-radiu圆角就是左上，右上，右下，左下的顺序<br>
+                    同样可以缩写<br>
+                    图片布局效果：round——平铺，repeat——重复，stretch——拉伸
+                    <br>
+                    <br>
+                    而边框设计的话，效果是将图片按照此顺序值，将borderimage图片切断，分布在四个角上，中间部分是剩余部分填充
+                    <br>
+                    <br>
+                    <br>
+                    以第三个例子为例：70左边框，截取后，上面是1，下面是7，中间余4，1为天，7为地，4来填中间 <br>
+                    左右105，左右分割后，左边1+一半2，右边是一半2+3，中间没有，需要把105的宽度在70的border框中显示，四个角有拉伸现象，
+                    即效果
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    div 设置为正方形，borderimage 截取 105
+                </td>
+                <td>
+                    <div class="borderImage2"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>体现边框设置值的功能：border-image: url("image/borderImage.jpg" ) 70 105 </td>
+                <td>
+                    <div class="borderImage3"></div>
+                </td>
+            </tr>
+            </tbody>
         </table>
+        </div>
+
+
+
+
 
     </div>
+
+
+
     <!--导航-->
 
     <div class="slide">

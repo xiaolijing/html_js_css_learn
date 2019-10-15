@@ -1,0 +1,55 @@
+/*圆角*/
+div.circle {
+    height: 100px; /*与width设置一致*/
+    width: 100px;
+    background: #9da;
+    border-radius: 50px; /*四个圆角值都设置为宽度或高度值的一半*/
+}
+
+div.semi-circle {
+    height: 100px;
+    width: 50px;
+    background: #9da;
+    border-radius: 50px 0 0 50px;
+}
+
+/*阴影*/
+.boxshadow-outset {
+    width: 100px;
+    height: 100px;
+    box-shadow: 4px 4px 6px #666;
+}
+
+.boxshadow-inset {
+    width: 100px;
+    height: 100px;
+    box-shadow: 4px 4px 6px #666 inset;
+}
+
+.boxshadow-multi {
+    width: 100px;
+    height: 100px;
+    box-shadow: 4px 2px 6px #f00, -4px -2px 6px #000, 0px 0px 12px 5px #33CC00 inset;
+}
+
+/*图片边框*/
+.borderImage1{
+    border:70px solid silver;
+    border-image: url(image/borderImage.jpg) 70;
+}
+
+.borderImage2{
+    width: 50px;
+    height: 50px;
+    border: 70px solid silver;
+    background-color: yellow;
+    border-image: url("image/borderImage.jpg" ) 105 105;
+}
+
+.borderImage3{
+    width: 50px;
+    height: 50px;
+    border: 70px solid silver;
+    background-color: yellow;
+    border-image: url("image/borderImage.jpg" ) 70 105 ;
+}
